@@ -24,6 +24,19 @@ router.get('/get/:recipeId', async (req, res, next) => {
   }
 })
 
+router.post('/set/:recipeId', isAuthenticated, async (req, res, next) => {
+  const { recipeText, title } = req.body
+  const author = req.session.username
+
+  try {
+    const recipeId = req.params.recipeId
+    const recipe = await Recipe.updateOne( {_id: recipeId}, {author, recipeText, title})
+    res.json(recipe)
+  } catch (e) {
+    next(e)
+  }
+})
+
 router.post('/add', isAuthenticated, async (req, res, next) => {
   const { recipeText, title } = req.body
   const author = req.session.username

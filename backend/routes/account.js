@@ -26,6 +26,7 @@ router.post('/login', async (req, res, next) => {
       req.session.username = username
       res.send("success")
     } else {
+      res.status(503)
       res.send("failed")
     }
   } catch (e) {

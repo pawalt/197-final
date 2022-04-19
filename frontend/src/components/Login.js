@@ -32,6 +32,7 @@ function Login() {
                   username: userName,
                   password: password,
                 })
+                console.log(resp)
                 if (resp.status != 200) {
                   alert("failed to log in")
                 } else {

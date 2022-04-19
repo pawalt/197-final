@@ -22,6 +22,17 @@ function ViewRecipe() {
   return (
     <>
     <h1 className="title">{recipe.title}</h1>
+    <div className="field">
+      <div className="control">
+        <a
+          className="button is-link"
+          type="button"
+          href={"/recipes/edit/" + recipeId}
+          >
+          Edit Recipe
+        </a>
+      </div>
+    </div>
     <Markdown>{recipe.recipeText}</Markdown>
     </>
   )

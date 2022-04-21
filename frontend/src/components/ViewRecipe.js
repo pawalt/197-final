@@ -56,7 +56,7 @@ function ViewRecipe() {
         </a>
       </div>
     </div>
-    <h2 className="subtitle"><strong>Author:</strong> {recipe.author}</h2>
+    <h2 className="subtitle"><strong>Author:</strong> <a href={"/recipes/user/" + recipe.author}>{recipe.author}</a></h2>
     <hr/>
     <div className="content">
       <Markdown>{recipe.recipeText}</Markdown>

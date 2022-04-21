@@ -34,7 +34,7 @@ function RecipeList() {
                 </div>
               </div>
               <hr/>
-              <div className="content">
+              <div className="content" style={{ "max-height": "20em", "overflow-y": "scroll" }}>
                 <Markdown>{recipe.recipeText}</Markdown>
               </div>
             </div>

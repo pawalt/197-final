@@ -9,9 +9,9 @@ function RecipeList() {
 
   useEffect(() => {
     const getRecipe= async () => {
-      let url = '/api/recipes/';
+      let url = '/api/recipes';
       if (author) {
-        url += "user/" + author;
+        url += "/user/" + author;
       }
       const { data } = await axios.get(url)
       changeRecipe(data)

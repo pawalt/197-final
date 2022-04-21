@@ -27,6 +27,7 @@ function NewRecipe() {
               const resp = await axios.post("/api/recipes/add", {
                 title: recipeTitle,
                 recipeText: recipeText,
+                comments: [],
               }, {withCredentials: true})
               navigate('/recipes/' + resp.data._id)
             }

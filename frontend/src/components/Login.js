@@ -16,7 +16,7 @@ function Login() {
     </div>
     <div className="field">
       <div className="control">
-        <input className="input" placeholder="Enter your password here" type="text" value={password} onChange={e => changePassword(e.target.value)} />
+        <input className="input" placeholder="Enter your password here" type="password" value={password} onChange={e => changePassword(e.target.value)} />
       </div>
     </div>
     <div className="field">
@@ -37,6 +37,7 @@ function Login() {
                   alert("failed to log in")
                 } else {
                   navigate("/", {replace: true})
+                  window.location.reload();
                 }
               } catch (err) {
                 alert(`failed to log in: ${err}`)
